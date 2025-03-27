@@ -1,0 +1,28 @@
+{
+  "name": "men-stack-relating-data-lab-cookbook",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stella-teu/men-stack-relating-data-lab-cookbook.git"
+  },
+  "author": "stella",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stella-teu/men-stack-relating-data-lab-cookbook/issues"
+  },
+  "homepage": "https://github.com/stella-teu/men-stack-relating-data-lab-cookbook#readme",
+  "description": "",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "dotenv": "^16.4.7",
+    "ejs": "^3.1.10",
+    "express": "^4.21.2",
+    "express-session": "^1.18.1",
+    "method-override": "^3.0.0",
+    "mongoose": "^8.13.0"
+  }
+}
