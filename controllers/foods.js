@@ -3,7 +3,13 @@ const router = Router();
 import User from "../models/user.js";
 
 router.get("/", async (req, res) => {
-    res.render('foods/index.ejs');
+    try {
+        const currentUser = await User.findById(req.session.user._id);
+        res.render('foods/index.ejs', { foods: currentUser.pantry,});
+    } catch (error){
+        console.log(error);
+        res.redirect("/");
+    }
 })
 
 router.get("/new", (req, res) => {
