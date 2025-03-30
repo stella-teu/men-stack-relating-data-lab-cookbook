@@ -7,11 +7,15 @@
 </head>
 <body>
     <h1>Welcome to the Pantry</h1>
-    <ul>
-        <% foods.forEach(food => { %>
-            <li><%= food.name %></li>
-        <% }); %>
-    </ul>
+    <% if (foods.length !== 0) { %>
+        <ul>
+            <% foods.forEach(food => { %>
+                <li><%= food.name %></li>
+            <% }); %>
+        </ul>
+    <% } else { %>
+        <p>There's nothing in this pantry.</p>
+    <% } %>
     <a href="/users/<%= user._id %>/foods/new">Add food</a>
 </body>
 </html>

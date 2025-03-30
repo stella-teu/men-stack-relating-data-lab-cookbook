@@ -17,7 +17,6 @@ router.get('/sign-out', (req, res) => {
 });
 
 router.post('/sign-up', async (req, res) => {
-  console.log("Sing up route was hit!")
   try {
     if (req.body.password !== req.body.confirmPassword){
       return res.send("Password and Confirm Password do not match.")
