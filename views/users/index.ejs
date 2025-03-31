@@ -6,11 +6,12 @@
     <title>Community</title>
 </head>
 <body>
+    <%- include('../partials/_navbar.ejs') %>
     <h1>Community</h1>
     <h2>See other people's pantries.</h2>
     <ul>
     <% users.forEach(user => { %>
-        <li><%= user.username %></li>
+        <li><%= user.username %>'s pantry</li>
     <% }); %>
     </ul>
 </body>
