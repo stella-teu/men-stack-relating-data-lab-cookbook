@@ -4,8 +4,8 @@ const foodSchema = new mongoose.Schema({
   name: {
     type: String,
     required: true,
-  }
-})
+  },
+});
 
 const userSchema = new mongoose.Schema({
   username: {
@@ -19,6 +19,6 @@ const userSchema = new mongoose.Schema({
   pantry: [foodSchema],
 });
 
-const User = mongoose.model('User', userSchema);
+const User = mongoose.model("User", userSchema);
 
 export default User;

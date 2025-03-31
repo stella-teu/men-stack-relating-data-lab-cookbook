@@ -1,26 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Pantry</title>
-</head>
-<body>
+  </head>
+  <body>
     <%- include('../partials/_navbar.ejs') %>
     <h1>Welcome to the Pantry</h1>
     <% if (foods.length !== 0) { %>
-        <ul>
-            <% foods.forEach(food => { %>
-                <li><%= food.name %></li>
-                <a href="/users/<%= user._id %>/foods/<%= food._id %>/edit">Edit</a>
-                <form action="/users/<%= user._id %>/foods/<%= food._id %>?_method=DELETE" method="POST">
-                    <button type="submit">Delete</button>
-                </form>
-            <% }); %>
-        </ul>
+    <ul>
+      <% foods.forEach(food => { %>
+      <li><%= food.name %></li>
+      <a href="/users/<%= user._id %>/foods/<%= food._id %>/edit">Edit</a>
+      <form
+        action="/users/<%= user._id %>/foods/<%= food._id %>?_method=DELETE"
+        method="POST"
+      >
+        <button type="submit">Delete</button>
+      </form>
+      <% }); %>
+    </ul>
     <% } else { %>
-        <p>There's nothing in this pantry.</p>
+    <p>There's nothing in this pantry.</p>
     <% } %>
     <a href="/users/<%= user._id %>/foods/new">Add food</a>
-</body>
+  </body>
 </html>
