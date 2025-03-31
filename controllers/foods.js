@@ -40,4 +40,15 @@ router.delete("/:foodId", async (req, res) => {
     }
 })
 
+router.get("/:foodId/edit", async (req, res) => {
+    try {
+        const currentUser = await User.findById(req.session.user._id);
+        const food = currentUser.pantry.id(req.params.foodId);    
+        res.render("foods/edit.ejs", { food: food});
+    } catch (error) {
+        console.log(error);
+        res.redirect("/")
+    }
+})
+
 export default router;
