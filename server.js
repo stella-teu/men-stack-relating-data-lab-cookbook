@@ -6,6 +6,7 @@ import session from "express-session";
 import MongoStore from "connect-mongo";
 import authController from "./controllers/auth.js";
 import foodsController from "./controllers/foods.js";
+import usersController from "./controllers/users.js";
 import { isSignedIn } from "./middleware/is-signed-in.js";
 import { passUserToView } from "./middleware/pass-user-to-view.js";
 import morgan from "morgan";
@@ -36,6 +37,7 @@ app.use(passUserToView);
 app.use("/auth", authController);
 app.use(isSignedIn);
 app.use("/users/:userId/foods", foodsController);
+app.use ("/community", usersController);
 
 mongoose.connection.on("connected", ()=> {
     console.log("Connected to MongoDB");
